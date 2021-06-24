@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <title></title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style media="screen">
+   
+    * {padding: 0; margin: 0;}
+    body{
+        background-color: #F2F2F2;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+    @font-face{
+        font-family: 'Helvetica Neue';
+        src: url('css/fonts/HelveticaNeue.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+
+}
+    /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  z-index: 500;
+  position: relative;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  font-family: "Velo Sans", sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #ddd;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+  .photo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 100;
+        display: flex;
+       max-width: 100%;
+    }
+      .photo img {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    
+   .wrapper {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-auto-rows: minmax(160px, auto);
+			justify-items: stretch;
+			align-items: stretch;
+            justify-content: space-around;
+            margin: 0 2em 0 2em;
+            position: absolute;
+		}
+
+		.wrapper > div{
+/*			padding: 1em;*/
+			background-color: #e7a158;
+		}
+
+		.wrapper > div.light {
+			padding: 1em;
+			background-color: #f4c3a0;
+		}
+    .included-text {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(64px, auto);
+        grid-row-gap: 1em;
+    }
+    
+    .heading {
+        grid-column: 1/4;
+        grid-row: 1/3;
+    }
+    .basic {
+        grid-column: 2/4;
+        grid-row: 3/4;
+    }
+    .caption {
+        grid-column: 2/4;
+        grid-row: 8/9;
+    }
+    .heading p {
+        font-family: "Helvetica Neue";
+        font-size: 3em;
+        font-weight: normal;
+    }
+    
+    .basic p {
+        font-family: 'Oxygen Mono', monospace;
+        font-size: 1.125em;
+/*        font-weight: normal;*/
+    }
+    .caprtion p {
+        font-family: 'Oxygen Mono', monospace;
+        font-size: 1em;
+        font-weight: normal;
+    }
+    
+		.box1 {
+			grid-column: 1/7;
+            grid-row: 1/3;
+            border-bottom: 1px solid #000000;
+		}
+
+		.box2 {
+			grid-column: 1/4;
+            grid-row: 3/5;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+		}
+
+		.gallery__item--1 {
+			grid-column: 4/7;
+            grid-row: 3/5;
+/*            overflow: hidden;*/
+            display: block;
+            border-bottom: 1px solid #000000;
+		}
+        .gallery__img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            display: block; 
+}
+
+		.box4 {
+			grid-column: 1/4;
+            grid-row: 5/10;
+             border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+		}
+    
+        .box5 {
+            grid-column: 4/7;
+            grid-row: 5/10;
+             border-bottom: 1px solid #000000;
+    }
+    
+    h2 {
+       font-size: 18em;
+        font-family: "Helvetica Neue";
+        font-weight: normal;
+        letter-spacing: 0.22em;
+    }
+
+    @media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Главная</a>
+  <a href="#space">Пространство</a>
+  <a href="#contact">Афиша</a>
+  <a href="#rituals">Ритуалы</a>
+  <a href="#shop">Продажа</a>
+  <a href="#contact">Контакты</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<main>
+        <img class="photo" src="css/images/Pink%20Frame.png">
+ </main>
+        <div class="wrapper">
+		<div class="box box1">
+		    <h2>BUDINA</h2>
+		</div>
+<div class="box box2 light">
+    <div class="included-text">
+        <div class="heading"><p>Живое<br>арт-пространство</p></div>
+        <div class="basic"><p>«BUDINA» — это павильон, где из труб распыляется биологически активный газ, стимулирующий клетки мозга. Он отбрасывает все сомнения и возвращает людям вдохновение.</p></div>
+        <div class="caption"><p>Теперь ты можешь творить прямо на стенах пространства, чтобы не упустить ни одной идеи!</p></div>
+    </div>
+</div>
+		<div class="box gallery__item--1">
+		    <img src="css/images/oblozhka%201.png" alt="Gallery image 1" class="gallery__img">
+		</div>
+		<div class="box box4 light">Box 4</div>
+		<div class="box box5">Box 5</div>
+	</div>
+
+<footer>
+    
+</footer>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>

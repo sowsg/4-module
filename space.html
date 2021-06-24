@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <title></title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style media="screen">
+ * {padding: 0; margin: 0;}
+    body{
+        background-color: #101010;
+    }
+    /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  font-family: "Velo Sans", sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #ddd;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+    .photo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 100;
+    }
+    
+
+    .space-container {
+        width: 864px;
+        height: 160px;
+        position: absolute;
+        top: 400px;
+        display: flex;
+    }
+    
+    .footer {
+        position: absolute;
+        width: 100wh;
+        height: 10%;
+    }
+/*    .footer up-line {*/
+/*        width: 100wh;*/
+/*        border: 1px solid #F2F2F2;*/
+/*        position: absolute;*/
+/*    }*/
+    .footer p {
+        font-size: 1em;
+        color: #f2f2f2;
+        font-family: "Oxygen Mono", sans-serif;
+        line-height: 30px;
+        padding: 16px 80px;
+        display: inline-block;
+    }
+    .rect-1{
+        position: absolute;
+        height: 82.93px;
+        top: 16px;
+        background: #F2F2F2;
+        border: 1px solid #FE4EC2;
+        box-sizing: border-box;
+    }
+    
+    </style>
+    </head>
+    <body>
+    <div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Главная</a>
+  <a href="#space">Пространство</a>
+  <a href="#contact">Афиша</a>
+  <a href="#rituals">Ритуалы</a>
+  <a href="#shop">Продажа</a>
+  <a href="#contact">Контакты</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<main>
+    <img class="photo" src="css/images/Pink%20Frame.png">
+</main>  
+        <div class="space-container">
+           <img src="css/images/space-budina%D1%81%D0%B1%D0%BE%D0%BA%D1%832%201.png">
+            <div class="rect-1"></div>
+            </div>
+<!--       <div class="footer">-->
+<!--           <div class="footer up-line"></div>-->
+<!--           <p>info.budina@gmail.com</p>-->
+<!--           <div class="contacts">-->
+<!--           <p>+79835550244</p>-->
+<!--           <p>+79831810001</p>-->
+<!--           </div>-->
+<!--           <p>пер. Трубный, 2с1</p>-->
+<!--           <p>2021</p>-->
+<!--       </div>-->
+    </body>
+</html>
