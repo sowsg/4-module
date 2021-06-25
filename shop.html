@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арт-галерея</title>
+    <script src="main.js"></script>
+    <style>
+    
+        * {padding: 0; margin: 0;}
+    body{
+        background-color: #F2F2F2;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+    @font-face {
+        font-family: 'Helvetica Neue';
+        src: url('css/fonts/HelveticaNeue.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+
+}
+        .topnav {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  z-index: 500;
+  position: relative;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+  font-family: "Velo Sans", sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #ddd;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+         .photo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 100;
+        display: flex;
+/*        max-width: 100%;*/
+      height: 880px;
+             width: 1440px;
+    }
+      .photo > img {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-row-gap: 1em;
+  overflow: hidden;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.wrapper .block{
+  height: 20em;
+  perspective: 80vw;
+  z-index: 0;
+  padding-left: 3em;
+}
+.single{
+  height: 16em;
+  transform-style: preserve-3d;
+}
+.single:hover{
+    animation: cube 1s linear;
+    animation-fill-mode: forwards;
+}
+.alternate{
+  height: 10vw;
+  transform-style: preserve-3d;
+}
+.alternate:hover{
+    animation: cube-reverse 1s linear;
+    animation-fill-mode: forwards;
+}
+.single img,
+.alternate img{
+  height: 16em;
+  width: auto;
+/*  margin-right: -2vw;*/
+  margin-top: 4em;
+}
+.single div, .alternate div{
+  position: absolute;
+  height: 16em;
+  width: auto;
+}
+.single .front-side{
+  transform: translateZ(10vw);
+}
+.alternate .front-side{
+  transform: translateZ(-10vw);
+}
+.single .back-side{
+  transform: rotateY(180deg)
+  translateZ(10vw);
+}
+.alternate .back-side{
+  transform: rotateY(-180deg)
+  translateZ(-10vw);
+}
+.block .single .price{
+  transform: rotateY(90deg)
+  translateX(-10vw);
+  transform-origin: left;
+}
+.block .alternate .price{
+  transform: rotateY(90deg)
+  translateX(8vw)
+  translateZ(10vw);
+  transform-origin: left;
+}
+        
+@keyframes cube {
+  0%{
+    transform: rotateY(0)
+    translateX(0);
+  }
+  100%{
+    transform: rotateY(89.6deg)
+    translateX(15vw);
+  }
+}
+@keyframes cube-reverse {
+  0%{
+    transform: rotateY(0);
+  }
+  100%{
+    transform: rotateY(-90deg);
+  }
+}
+
+.wrapper .block .price h2{
+  position: absolute;
+  font-family: "Oxygen Mono", monospace;
+  font-size: 1em;
+  margin-top: -8vw;
+  margin-left: 12vw;
+  text-align: center;
+  width: 5vw;
+  line-height: 1.5;
+  transform: rotateY(180deg);
+}
+.wrapper .block .alternate .price h2{
+  margin-left: -5vw;
+  transform: rotateY(0);
+
+}
+.wrapper .block:nth-of-type(4) .alternate .price h2{
+  margin-left: -12vw;
+}
+.wrapper .block:nth-of-type(15) .alternate .price h2{
+  margin-left: -12vw;
+}
+.wrapper .block:nth-of-type(9) .alternate .price h2{
+  margin-left: -15vw;
+}
+.price h2 span{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.price h2 span:first-child{
+    font-family: "Oxygen Mono", monospace;
+    font-size: 0.8vw;
+}
+.price h2 span:last-child{
+    font-family: "Oxygen Mono", monospace;
+    padding-top: 1vw;
+    font-size: 1.4vw;
+}
+.wrapper .block:nth-of-type(2){
+  margin-left: 2em;
+}
+.wrapper .block:nth-of-type(4){
+  margin-left: 0.5em;
+}
+.wrapper .block:nth-of-type(7){
+  margin-left: 2em;
+}
+.wrapper .block:nth-of-type(9){
+  margin-left: 1vw;
+}
+.wrapper .block:nth-of-type(12){
+  margin-left: 4vw;
+}
+.wrapper .block:nth-of-type(13),{
+  margin-left: 3vw;
+}
+.wrapper .block:nth-of-type(15){
+  margin-left: 4vw;
+}
+        footer {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+border-top: 1px solid #000000;
+margin-left: 3vw;
+margin-right: 3vw;
+bottom: 1.5vw;
+top: 21vw;
+margin-top: 2em;
+}
+        footer p {
+            font-family: "Oxygen Mono", monospace;
+            font-size: 1em;
+            font-style: normal;
+            padding: 1em;
+        }
+        
+    </style>
+  </head>
+<!--  Header-->
+  <body>
+    <div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Главная</a>
+  <a href="space.html">Пространство</a>
+  <a href="#contact">Афиша</a>
+  <a href="shop.html">Арт-галерея</a>
+  <a href="#contact">Контакты</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!--  Main-->
+   <div class="wrapper">
+
+     <div class="block" id="block_1">
+       <div class="single">
+         <div class="front-side">
+         </div><img src="css/images/1-darkheart.png" alt
+       ="" id="first_pic">
+       <div class="price" id="first_price">
+         <h2><span>Мария Неймарк, плакат</span> <span>1490 р.</span></h2>
+       </div>
+       <div class="back-side">
+
+       </div>
+     </div>
+     </div>
+
+     <div class="block" id="block_2">
+       <div class="single">
+         <div class="front-side">
+         </div><img src="css/images/typo(3)%201.png" alt=
+       "" id="second_pic">
+       <div class="price" id="second_price">
+         <h2><span>Эксперимент</span> <span>990 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/mockup.png" alt="">
+       <div class="price">
+         <h2><span>Дабл-плакат</span> <span>2000 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/heart-colorful%201.png" alt="">
+       <div class="price">
+         <h2><span>Мария Неймарк, плакат</span> <span>1490 р.</span></h2>
+       </div>
+       <div class="back-side"> </div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/orange.png" alt="">
+       <div class="price">
+         <h2><span>Юки, плакат</span> <span>1290 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/gray.png" alt="">
+       <div class="price">
+         <h2><span>Михаил Зубов, плакат</span> <span>1290 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/green.png" alt="">
+       <div class="price">
+         <h2><span>Павел Александров, плакат</span> <span>1290 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/Paint%20Packaging%20Mockup%201.png" alt="">
+       <div class="price">
+         <h2><span>Граффити набор</span> <span>4590 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/experiment.png" alt="">
+       <div class="price">
+         <h2><span>Эксперимент</span> <span>990 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+
+     <div class="block">
+       <div class="single">
+         <div class="front-side">
+     </div>
+     <img src="css/images/graver-heart.png" alt="">
+       <div class="price">
+         <h2><span>Мария Неймарк, плакат</span> <span>1490 р.</span></h2>
+       </div>
+       <div class="back-side"></div>
+     </div>
+     </div>
+</div>
+<!--Footer-->
+    <footer>
+      <p>info.budina@gmail.com</p>
+      <div class="contacts">
+        <p>+79835550244</p>
+        <p>+79831810001</p>
+      </div>
+      <p>пер. Трубный, 2с1</p>
+      <p>2021</p>
+    </footer>
+    <main>
+        <img class="photo" src="css/images/Pink%20Frame.png">
+<!--<div class="photo-2"></div>-->
+ </main>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+  <script src="main.js"></script>
+  </body>
+</html>
+

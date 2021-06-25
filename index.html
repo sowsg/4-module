@@ -4,10 +4,11 @@
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <title></title>
+       <title>Главная</title>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style media="screen">
-   
+       <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>
+<style media="screen">   
     * {padding: 0; margin: 0;}
     body{
         background-color: #F2F2F2;
@@ -15,7 +16,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 
-    @font-face{
+    @font-face {
         font-family: 'Helvetica Neue';
         src: url('css/fonts/HelveticaNeue.ttf') format('truetype');
         font-weight: normal;
@@ -57,14 +58,21 @@
   display: none;
 }
     
-    main {
+/*    main {*/
         display: flex;
         background: url(css/images/Pink%20Frame.png);
+        background-size: cover;
         width: 100%;
         height: 100%;
         position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 100;
     }
-    .photo-2 {
+/*    .photo-2 {*/
         position: absolute;
         height: 100%;
 /*        display: flex;*/
@@ -100,7 +108,34 @@
         align-items: center;
         flex-shrink: 0;
     }
-    
+    main {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+/*        width: 100px;*/
+        min-height: 100%;
+    }
+  .photo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        z-index: 100;
+        display: flex;
+        max-width: 100%;
+      height: 2300px;
+    }
+      .photo img {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100px;
+        min-height: 100%;
+    }
    .wrapper {
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
@@ -114,12 +149,12 @@
 
 		.wrapper > div{
 /*			padding: 1em;*/
-			background-color: #e7a158;
+/*			background-color: #e7a158;*/
 		}
 
 		.wrapper > div.light {
 			padding: 1em;
-			background-color: #f4c3a0;
+/*			background-color: #f4c3a0;*/
 		}
     .included-text {
         display: grid;
@@ -149,9 +184,9 @@
     .basic p {
         font-family: 'Oxygen Mono', monospace;
         font-size: 1.125em;
-/*        font-weight: normal;*/
+        font-weight: normal;
     }
-    .caprtion p {
+    .caprtion > p{
         font-family: 'Oxygen Mono', monospace;
         font-size: 1em;
         font-weight: normal;
@@ -226,25 +261,36 @@
     text-align: left;
   }
 }
+    footer {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+/*border-top: 1px solid #000000;*/
+margin-left: 3vw;
+margin-right: 3vw;
+bottom: 1.5vw;
+top: 21vw;
+margin-top: 132em;
+}
+        footer p {
+            font-family: "Oxygen Mono", monospace;
+            font-size: 1em;
+            font-style: normal;
+            padding: 1em;
+        }
 </style>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Главная</a>
-  <a href="#space">Пространство</a>
+  <a href="index.html" class="active">Главная</a>
+  <a href="space.html" alt>Пространство</a>
   <a href="#contact">Афиша</a>
-  <a href="#rituals">Ритуалы</a>
-  <a href="#shop">Продажа</a>
+  <a href="shop.html" alt>Арт-галерея</a>
   <a href="#contact">Контакты</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
-
-<main>
-<!--        <img class="photo" src="css/images/Pink%20Frame.png">-->
-<div class="photo-2"></div>
- </main>
         <div class="wrapper">
 		<div class="box box1">
 		    <h2>BUDINA</h2>
@@ -263,10 +309,20 @@
 		<div class="box box5">Box 5</div>
 	</div>
 
-<footer>
-    
-</footer>
-
+    <!--Footer-->
+    <footer>
+      <p>info.budina@gmail.com</p>
+      <div class="contacts">
+        <p>+79835550244</p>
+        <p>+79831810001</p>
+      </div>
+      <p>пер. Трубный, 2с1</p>
+      <p>2021</p>
+    </footer>
+<main>
+        <img class="photo" src="css/images/Pink%20Frame.png">
+<!--<div class="photo-2"></div>-->
+ </main>
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -277,6 +333,18 @@ function myFunction() {
   }
 }
 </script>
+<script>
+$(function() {
 
+   $("body").mousewheel(function(event, delta) {
+
+      this.scrollLeft -= (delta * 30);
+    
+      event.preventDefault();
+
+   });
+
+});
+</script>
 </body>
 </html>

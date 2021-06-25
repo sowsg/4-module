@@ -4,7 +4,7 @@
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <title></title>
+       <title>Пространство</title>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style media="screen">
  * {padding: 0; margin: 0;}
@@ -76,7 +76,9 @@
     text-align: left;
   }
 }
-    .photo{
+
+    
+  .photo{
         position: absolute;
         top: 0;
         left: 0;
@@ -85,15 +87,17 @@
         pointer-events: none;
         z-index: 100;
         display: flex;
-       max-width: 100%;
+        height: 880px;
+             width: 1440px;
     }
-    
-      .photo img {
+      .photo > img {
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
+        width: 100px;
+        min-height: 100%;
     }
 
     .space-container {
@@ -154,21 +158,33 @@
          position: absolute;
     }
     
-    .footer {
-        position: absolute;
-        width: 100wh;
-        height: 10%;
-    }
+    footer {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+border-top: 1px solid #FFFFFF;
+margin-left: 3vw;
+margin-right: 3vw;
+bottom: 1.5vw;
+top: 21vw;
+margin-top: 44em;
+}
+        footer p {
+            font-family: "Oxygen Mono", monospace;
+            font-size: 1em;
+            font-style: normal;
+            padding: 1em;
+            color: #FFFFFF;
+        }
     </style>
 </head>
    
     <body>
     <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Главная</a>
-  <a href="#space">Пространство</a>
+  <a href="index.html" class="active">Главная</a>
+  <a href="space.html">Пространство</a>
   <a href="#contact">Афиша</a>
-  <a href="#rituals">Ритуалы</a>
-  <a href="#shop">Продажа</a>
+  <a href="shop.html">Продажа</a>
   <a href="#contact">Контакты</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -180,26 +196,27 @@
         <div class="wrapper">
 		<div class="space-container">
            <img src="css/images/space-budina%D1%81%D0%B1%D0%BE%D0%BA%D1%832%201.png">
-<div class="rect-hover-1"></div> 
-<div class="rect-hover-2"></div>           
-<div class="rect-hover-3"></div>                    
-            <div class="rect-1"></div>
-            <div class="rect-2"></div>
-            <img src="css/images/middle-space.png" class="rect-3">
-            
+<!--<div class="rect-hover-1"></div> -->
+<!--<div class="rect-hover-2"></div>           -->
+<!--<div class="rect-hover-3"></div>                    -->
+<!--            <div class="rect-1"></div>-->
+<!--            <div class="rect-2"></div>-->
+<!--            <img src="css/images/middle-space.png" class="rect-3">-->     
             </div>
-<footer>
- <!--       <div class="footer">-->
-<!--           <div class="footer up-line"></div>-->
-<!--           <p>info.budina@gmail.com</p>-->
-<!--           <div class="contacts">-->
-<!--           <p>+79835550244</p>-->
-<!--           <p>+79831810001</p>-->
-<!--           </div>-->
-<!--           <p>пер. Трубный, 2с1</p>-->
-<!--           <p>2021</p>-->
-<!--       </div>-->   
-</footer>
+            <main>
+        <img class="photo" src="css/images/Pink%20Frame.png">
+<!--<div class="photo-2"></div>-->
+ </main>
+<!--Footer-->
+    <footer>
+      <p>info.budina@gmail.com</p>
+      <div class="contacts">
+        <p>+79835550244</p>
+        <p>+79831810001</p>
+      </div>
+      <p>пер. Трубный, 2с1</p>
+      <p>2021</p>
+    </footer>
 
 <script>
 function myFunction() {
